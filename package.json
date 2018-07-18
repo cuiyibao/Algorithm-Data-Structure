@@ -1,0 +1,19 @@
+{
+    "name": "unit-cli-xb",
+    "version": "1.0.0",
+    "description": "工具类方法基础cli",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --recursive"
+    },
+    "keywords": [
+        "工具类",
+        "cli"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chai": "^4.1.2",
+        "mocha": "^5.2.0"
+    }
+}
