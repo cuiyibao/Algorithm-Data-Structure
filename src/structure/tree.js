@@ -60,4 +60,62 @@ function rangeTree(array) {
             firstNode = node;
         }
     }
+    return firstNode;
+}
+
+/**
+ * 先序遍历
+ */
+function ergodicNode(array, node) {
+    array.push(node.node);
+    if (node.hasLeft()) {
+        ergodicNode(array, node.leftNode);
+    }
+    if (node.hasRight()) {
+        ergodicNode(array, node.rightNode);
+    }
+}
+
+function beforeErgodic(firstNode) {
+    let array = [];
+    ergodicNode(array, firstNode);
+    return array;
+}
+
+/**
+ * 中序遍历
+ */
+function ergodicNode(array, node) {
+    if (node.hasLeft()) {
+        ergodicNode(array, node.leftNode);
+    }
+    array.push(node.node);
+    if (node.hasRight()) {
+        ergodicNode(array, node.rightNode);
+    }
+}
+
+function middleErgodic(firstNode) {
+    let array = [];
+    ergodicNode(array, firstNode);
+    return array;
+}
+
+/**
+ * 后序遍历
+ */
+function ergodicNode(array, node) {
+    if (node.hasLeft()) {
+        ergodicNode(array, node.leftNode);
+    }
+    if (node.hasRight()) {
+        ergodicNode(array, node.rightNode);
+    }
+    array.push(node.node);
+}
+
+function afterErgodic(firstNode) {
+    let array = [];
+    ergodicNode(array, firstNode);
+    return array;
 }
