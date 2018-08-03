@@ -25,3 +25,16 @@ getJSON("/posts.json").then(function(json) {
 }, function(error) {
     console.error('出错了', error);
 });
+
+getJSON("url1").then(function(json){
+    console.log('1');
+    return getJSON('url2');
+}).then(function(json){
+    console.log('2');
+    return getJSON('url3');
+}).then(function(json){
+    console.log('3');
+    return '1';
+}).then(function(string){
+    console.log(string);
+})

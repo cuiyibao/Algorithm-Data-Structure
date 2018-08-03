@@ -63,6 +63,25 @@ function SignLink(array) {
 }
 
 /**
+ * 单向链表反转
+ * @param {*} firstNode 
+ */
+function reverse ( firstNode ) {
+	if ( firstNode == null || firstNode.next == null ) return ;
+	var p,q,r;
+	p = firstNode;
+	q = p.next;
+	firstNode.next = null;
+	while(q){
+		r = q.next;
+		q.next = p;
+		p = q;
+		q = r;
+	}
+	// firstNode.next = null;
+}
+
+/**
  * 双向链表，节点
  * @param {*} context 
  */
